@@ -50,27 +50,30 @@ namespace ProgrammersTest
 
 		TEST_METHOD(a06)
 		{
-			
+			Assert::IsTrue(a06_Turn_the_natural_number_upside_down_to_make_it_an_array(12345) == vector<int> {5, 4, 3, 2, 1});
+			Assert::IsTrue(a06_Turn_the_natural_number_upside_down_to_make_it_an_array(23456) == vector<int> {6, 5, 4, 3, 2});
 		}
 
 		TEST_METHOD(a07)
 		{
-			
+
+			Assert::IsTrue(a07_Number_of_p_and_y_in_the_string("pPoooyY") == true);
+			Assert::IsTrue(a07_Number_of_p_and_y_in_the_string("Pyy") == false);
 		}
 
 		TEST_METHOD(a08)
 		{
-			
+			Assert::IsTrue(a08_Place_in_integer_descending_order(118372) == 873211);
 		}
 
 		TEST_METHOD(a09)
 		{
-			
+			Assert::Fail();
 		}
 
 		TEST_METHOD(a10)
 		{
-			
+			Assert::Fail();
 		}
 	};
 }
