@@ -1,6 +1,9 @@
 #include <math.h>
 #include <string>
 #include <vector>
+#include <unordered_map>
+#include <algorithm>
+
 
 using namespace std;
 
@@ -90,6 +93,69 @@ long long a05_Determining_the_Integer_Square_Root(long long n) {
     {
         answer = -1;
     }
+    return answer;
+}
+
+vector<int> a06_Turn_the_natural_number_upside_down_to_make_it_an_array(long long n) {
+    vector<int> answer;
+
+    long long updatedNum = n;
+
+    while (updatedNum != 0)
+    {
+        answer.push_back(updatedNum % 10);
+        updatedNum = updatedNum / 10;
+    }
+    
+    return answer;
+}
+
+bool a07_Number_of_p_and_y_in_the_string(string s) {
+    bool answer = true;
+    
+    //#include <unordered_map>
+    enum a07_enum{
+        p = 'p',
+        y = 'y',
+    };
+
+    unordered_map<char, int> map_py;
+    map_py[(char)a07_enum::p] = 0;
+    map_py[(char)a07_enum::y] = 0;
+
+    for (char item : s)
+    {
+        
+        if (tolower(item) == (char)a07_enum::p)
+        {
+            map_py[(char)a07_enum::p]++;
+        }
+        else if (tolower(item) == (char)a07_enum::y)
+        {
+            map_py[(char)a07_enum::y]++;
+        }
+    }
+
+    if (map_py[(char)a07_enum::p] == map_py[(char)a07_enum::y]) answer = true;
+    else answer = false;
+
+    return answer;
+}
+
+
+bool a08_dec_compare(char a, char b)
+{
+    return a > b;
+}
+long long a08_Place_in_integer_descending_order(long long n) {
+    long long answer = 0;
+    
+    string strN = to_string(n);
+    //sort(strN.begin(), strN.end(), greater<char>());
+    sort(strN.begin(), strN.end(), a08_dec_compare);
+    
+    answer = stoll(strN);
+
     return answer;
 }
 
