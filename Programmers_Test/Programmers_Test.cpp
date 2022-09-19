@@ -22,18 +22,18 @@ namespace ProgrammersTest
 		}
 		TEST_METHOD(a03)
 		{
-			Assert::AreEqual(a03_the_sum_of_the_mineral_water(0), 0);
+			Assert::AreEqual(a03_the_sum_of_the_divisor(0), 0);
 			
 			// (1,1) <= 1 한개로 봐야함
-			Assert::AreEqual(a03_the_sum_of_the_mineral_water(1), 1);
+			Assert::AreEqual(a03_the_sum_of_the_divisor(1), 1);
 			// 1,4 & (2,2) <= 2 한개로 봐야함
-			Assert::AreEqual(a03_the_sum_of_the_mineral_water(4), 7);
+			Assert::AreEqual(a03_the_sum_of_the_divisor(4), 7);
 			// 1,9 & (3,3)<= 3 한개로 봐야함
-			Assert::AreEqual(a03_the_sum_of_the_mineral_water(9), 13);
+			Assert::AreEqual(a03_the_sum_of_the_divisor(9), 13);
 
 
-			Assert::AreEqual(a03_the_sum_of_the_mineral_water(12), 28);
-			Assert::AreEqual(a03_the_sum_of_the_mineral_water(5), 6);
+			Assert::AreEqual(a03_the_sum_of_the_divisor(12), 28);
+			Assert::AreEqual(a03_the_sum_of_the_divisor(5), 6);
 		}
 
 		TEST_METHOD(a04)
@@ -68,12 +68,16 @@ namespace ProgrammersTest
 
 		TEST_METHOD(a09)
 		{
-			Assert::Fail();
+			Assert::IsTrue(a09_Hashad_number(10) == true);
+			Assert::IsTrue(a09_Hashad_number(12) == true);
+			Assert::IsTrue(a09_Hashad_number(11) == false);
+			Assert::IsTrue(a09_Hashad_number(13) == false);
 		}
 
 		TEST_METHOD(a10)
 		{
-			Assert::Fail();
+			Assert::IsTrue(a10_Replace_a_String_with_an_Integer("1234") == 1234);
+			Assert::IsTrue(a10_Replace_a_String_with_an_Integer("-1234") == -1234);
 		}
 	};
 }

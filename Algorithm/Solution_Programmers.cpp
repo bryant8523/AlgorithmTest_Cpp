@@ -12,6 +12,7 @@ int main()
 
 }
 
+//짝수와 홀수1
 string a01_Evenand_odd_numbers(int num) {
     string answer = "";
 
@@ -20,6 +21,7 @@ string a01_Evenand_odd_numbers(int num) {
     return answer;
 }
 
+// 자릿수 더하기5
 int a02_Add_digits(int n)
 {
     int answer = 0;
@@ -37,7 +39,8 @@ int a02_Add_digits(int n)
     return answer;
 }
 
-int a03_the_sum_of_the_mineral_water(int n)
+// 약수의 합3
+int a03_the_sum_of_the_divisor(int n)
 {
     // +math.h
     int answer = 0;
@@ -63,6 +66,7 @@ int a03_the_sum_of_the_mineral_water(int n)
     return answer;
 }
 
+//평균 구하기2
 double a04_Obtaining_the_Mean(vector<int> arr)
 {
     double answer = 0;
@@ -77,6 +81,7 @@ double a04_Obtaining_the_Mean(vector<int> arr)
     return answer;
 }
 
+// 정수 제곱근 판별4
 long long a05_Determining_the_Integer_Square_Root(long long n) {
     long long answer = 0;
 
@@ -96,6 +101,7 @@ long long a05_Determining_the_Integer_Square_Root(long long n) {
     return answer;
 }
 
+// 자연수 뒤집어 배열로 만들기6
 vector<int> a06_Turn_the_natural_number_upside_down_to_make_it_an_array(long long n) {
     vector<int> answer;
 
@@ -110,6 +116,7 @@ vector<int> a06_Turn_the_natural_number_upside_down_to_make_it_an_array(long lon
     return answer;
 }
 
+// 문자열 내 p와 y의 개수7
 bool a07_Number_of_p_and_y_in_the_string(string s) {
     bool answer = true;
     
@@ -147,6 +154,7 @@ bool a08_dec_compare(char a, char b)
 {
     return a > b;
 }
+// 정수 내림차 순으로 배치하기9
 long long a08_Place_in_integer_descending_order(long long n) {
     long long answer = 0;
     
@@ -159,3 +167,36 @@ long long a08_Place_in_integer_descending_order(long long n) {
     return answer;
 }
 
+// 하샤드 수8
+bool a09_Hashad_number(int x) {
+    bool answer = true;
+
+    int copiedX = x;
+
+    int total = 0;
+    while (copiedX != 0)
+    {
+        total += copiedX % 10;
+        copiedX = copiedX / 10;
+    }
+
+    answer = (x % total) == 0 ? true : false;
+
+    return answer;
+}
+
+// 문자열을 정수로 바꾸기
+int a10_Replace_a_String_with_an_Integer(string s) {
+    int answer = 0;
+
+    if (s[0] == '-') 
+    {
+        answer = -stoi(s.substr(1));
+    }
+    else 
+    {
+        answer = stoi(s);
+    }
+
+    return answer;
+}
