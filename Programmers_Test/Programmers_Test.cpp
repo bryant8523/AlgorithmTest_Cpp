@@ -79,5 +79,11 @@ namespace ProgrammersTest
 			Assert::IsTrue(a10_Replace_a_String_with_an_Integer("1234") == 1234);
 			Assert::IsTrue(a10_Replace_a_String_with_an_Integer("-1234") == -1234);
 		}
+
+		TEST_METHOD(a11)
+		{
+			Assert::IsTrue(a11_n_numbers_spaced_by_x(2, 5) == vector<long long>{2, 4, 6, 8, 10});
+			Assert::IsTrue(a11_n_numbers_spaced_by_x(4, 3) == vector<long long>{4, 8, 12});
+		}
 	};
 }

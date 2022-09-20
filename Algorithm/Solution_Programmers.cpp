@@ -200,3 +200,17 @@ int a10_Replace_a_String_with_an_Integer(string s) {
 
     return answer;
 }
+
+//x만큼 간격이 있는 n개의 숫자
+vector<long long> a11_n_numbers_spaced_by_x(int x, int n) {
+    vector<long long> answer;
+
+    int offset = 1;
+    int end = n + offset;
+
+    for (int i = 0 + offset; i < end; i++)
+    {
+        answer.push_back(x * i);
+    }
+    return answer;
+}
