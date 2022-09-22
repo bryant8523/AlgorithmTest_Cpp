@@ -9,7 +9,12 @@ namespace ProgrammersTest
 	TEST_CLASS(ProgrammersTest)
 	{
 	public:
-		
+		TEST_METHOD(a01)
+		{
+			Assert::IsTrue(a01_Poketmon(vector<int> {3, 1, 2, 3}) == 2);
+			Assert::IsTrue(a01_Poketmon(vector<int> {3, 3, 3, 2, 2, 4}) == 3);
+			Assert::IsTrue(a01_Poketmon(vector<int> {3, 3, 3, 2, 2, 2}) == 2);
+		}
 		TEST_METHOD(a23)
 		{
 			Assert::IsTrue(a23_Evenand_odd_numbers(3) == "Odd");

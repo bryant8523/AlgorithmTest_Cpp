@@ -3,9 +3,20 @@
 #include <vector>
 #include <unordered_map>
 #include <algorithm>
-
+#include <unordered_set>
 
 using namespace std;
+
+int a01_Poketmon(vector<int> nums)
+{
+    int answer = 0;
+    
+    unordered_set<int> myPoketmon(nums.begin(), nums.end());
+    
+    answer = min((int)nums.size() / 2, (int)myPoketmon.size());
+
+    return answer;
+}
 
 // 23.Â¦¼ö¿Í È¦¼ö
 string a23_Evenand_odd_numbers(int num) {
