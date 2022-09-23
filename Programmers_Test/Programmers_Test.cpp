@@ -15,6 +15,21 @@ namespace ProgrammersTest
 			Assert::IsTrue(a01_Poketmon(vector<int> {3, 3, 3, 2, 2, 4}) == 3);
 			Assert::IsTrue(a01_Poketmon(vector<int> {3, 3, 3, 2, 2, 2}) == 2);
 		}
+		TEST_METHOD(a02)
+		{
+			Assert::IsTrue(a02_Year_of_2016(5, 24) == "TUE");
+		}
+		TEST_METHOD(a03)
+		{
+			Assert::IsTrue(a03_Get_middle_letter("abcde") == "c");
+			Assert::IsTrue(a03_Get_middle_letter("qwer") == "we");
+		}
+		TEST_METHOD(a04)
+		{
+			Assert::IsTrue(a04_hate_same_number(vector<int>{ 1,1,3,3,0,1,1 }) == vector<int>{1, 3, 0, 1});
+			Assert::IsTrue(a04_hate_same_number(vector<int>{ 4, 4, 4, 3, 3 }) == vector<int>{4, 3});
+			
+		}
 		TEST_METHOD(a23)
 		{
 			Assert::IsTrue(a23_Evenand_odd_numbers(3) == "Odd");

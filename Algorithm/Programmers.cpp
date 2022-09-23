@@ -7,6 +7,7 @@
 
 using namespace std;
 
+// 1.포켓몬
 int a01_Poketmon(vector<int> nums)
 {
     int answer = 0;
@@ -17,6 +18,87 @@ int a01_Poketmon(vector<int> nums)
 
     return answer;
 }
+
+// 2.2016년
+string a02_Year_of_2016(int a, int b)
+{
+    string answer = "";
+
+    const int months[] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    const int yun_months[] = { 31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    const string days[] = { "SUN","MON","TUE","WED","THU","FRI","SAT" };
+
+    int total_Day = 0;
+    int processed_a = a - 1;
+    for (int i = 0; i < processed_a; i++)
+    {
+        total_Day = total_Day + yun_months[i];
+    }
+
+    total_Day = (total_Day + 4) + b;
+
+    int processed_day = total_Day % 7;
+
+    answer = days[processed_day];
+    //01/01/16 is Friday
+    //what day on a/b/16?
+
+    // SUN,MON,TUE,WED,THU,FRI,SAT
+
+    // (16 year is yun year)
+
+    return answer;
+}
+
+// 3.가운데 글자 가져오기
+string a03_Get_middle_letter(string s) {
+    string answer = "";
+
+    bool isOdd = s.size() % 2;
+    int s_center = s.size() / 2;
+
+    if (isOdd)
+    {
+        answer.push_back(s[s_center]);
+    }
+    else
+    {
+        answer.append(s.substr(s_center - 1, 2));
+    }
+    
+    return answer;
+}
+
+// 04.같은 숫자는 싫어
+vector<int> a04_hate_same_number(vector<int> arr)
+{
+    /*vector<int> answer;
+
+    answer.push_back(arr[0]);
+    int temp = arr[0];
+
+    for (int item : arr)
+    {
+        if (temp != item)
+        {
+            answer.push_back(item);
+            temp = item;
+        }
+    }
+
+    return answer;*/
+
+
+
+    // 효율성 및 시간 복잡도 압승 (issue에 기록 필요)
+    vector<int> answer;
+    auto value = unique(arr.begin(), arr.end());
+    arr.erase(value, arr.end());
+
+    answer = arr;
+    return answer;
+}
+
 
 // 23.짝수와 홀수
 string a23_Evenand_odd_numbers(int num) {
