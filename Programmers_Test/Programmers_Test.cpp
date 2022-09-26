@@ -28,8 +28,29 @@ namespace ProgrammersTest
 		{
 			Assert::IsTrue(a04_hate_same_number(vector<int>{ 1,1,3,3,0,1,1 }) == vector<int>{1, 3, 0, 1});
 			Assert::IsTrue(a04_hate_same_number(vector<int>{ 4, 4, 4, 3, 3 }) == vector<int>{4, 3});
-			
 		}
+		TEST_METHOD(a05)
+		{
+			Assert::IsTrue(a05_a_divisive_array_of_numbers(vector<int>{ 5, 9, 7, 10 }, 5) == vector<int>{5, 10});
+			Assert::IsTrue(a05_a_divisive_array_of_numbers(vector<int>{ 2, 36, 1, 3 }, 1) == vector<int>{1, 2, 3, 36});
+			Assert::IsTrue(a05_a_divisive_array_of_numbers(vector<int>{ 3, 2, 6 }, 10) == vector<int>{-1});
+		}
+		TEST_METHOD(a06)
+		{
+			Assert::IsTrue(a06_the_sum_between_two_integers(3,5) == 12);
+			Assert::IsTrue(a06_the_sum_between_two_integers(3,3) == 3);
+			Assert::IsTrue(a06_the_sum_between_two_integers(5,3) == 12);
+		}
+
+		TEST_METHOD(a07)
+		{
+			Assert::IsTrue(a07_Sorting_the_string_as_you_will(
+				vector<string>{"sun", "bed", "car"},1) == vector<string>{"car", "bed", "sun"});
+			Assert::IsTrue(a07_Sorting_the_string_as_you_will(
+				vector<string>{"abce", "abcd", "cdx"}, 2) == vector<string>{"abcd", "abce", "cdx"});
+		}
+
+
 		TEST_METHOD(a23)
 		{
 			Assert::IsTrue(a23_Evenand_odd_numbers(3) == "Odd");

@@ -69,6 +69,7 @@ string a03_Get_middle_letter(string s) {
     return answer;
 }
 
+
 // 04.같은 숫자는 싫어
 vector<int> a04_hate_same_number(vector<int> arr)
 {
@@ -99,6 +100,99 @@ vector<int> a04_hate_same_number(vector<int> arr)
     return answer;
 }
 
+bool a05_inc_Func(int a, int b)
+{
+    return a < b;
+}
+// 05.나누어 떨어지는 숫자 배열
+vector<int> a05_a_divisive_array_of_numbers(vector<int> arr, int divisor) {
+    vector<int> answer;
+
+    for (int item : arr)
+    {
+        if (0 == item % divisor)
+            answer.push_back(item);
+    }
+
+    sort(answer.begin(), answer.end(), a05_inc_Func);
+
+    if (answer.empty())
+    {
+        answer.push_back(-1);
+    }
+
+    return answer;
+}
+// 06.두 정수 사이의 합
+long long a06_the_sum_between_two_integers(int a, int b) {
+    long long answer = 0;
+
+    long long sum = 0;
+
+    int min_a = min(a, b);
+    int max_b = max(a, b);
+
+    for (int i = min_a; i <= max_b; i++)
+    {
+        sum += (long long)i;
+    }
+
+    answer = sum;
+
+    return answer;
+}
+
+
+
+typedef struct 
+{
+    string strData;
+    char chrData;
+} DATA;
+bool a07_inc_Func(DATA stData1, DATA stData2)
+{
+    return (stData1.chrData == stData2.chrData) ?
+        (stData1.strData < stData2.strData) : (stData1.chrData < stData2.chrData);
+}
+// 07.문자열 내 마음대로 정렬하기
+vector<string> a07_Sorting_the_string_as_you_will(vector<string> strings, int n) 
+{
+    /*vector<string> answer;
+    vector<DATA> dataStruct;
+
+    int dataSize = strings.size();
+    for (int i = 0; i < dataSize; i++)
+    {
+        DATA structData;
+        structData.strData = strings[i];
+        structData.chrData = structData.strData[n];
+
+        dataStruct.push_back(structData);
+    }
+
+    sort(dataStruct.begin(), dataStruct.end(), a07_inc_Func);
+
+    for (auto item : dataStruct)
+    {
+        answer.push_back(item.strData);
+    }
+
+    return answer;*/
+    vector<string> answer(strings.size());
+    vector<pair<char, string>> vecTemp(strings.size());
+
+    for (int i = 0; i < strings.size(); i++)
+    {
+        vecTemp[i].first = strings[i][n];
+        vecTemp[i].second = strings[i];
+    }
+    sort(vecTemp.begin(), vecTemp.end());
+
+    for (int i = 0; i < strings.size(); i++)
+        answer[i] = vecTemp[i].second;
+
+    return answer;
+}
 
 // 23.짝수와 홀수
 string a23_Evenand_odd_numbers(int num) {
